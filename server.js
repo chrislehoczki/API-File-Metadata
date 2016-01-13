@@ -1,23 +1,29 @@
 'use strict';
 
 var express = require('express');
-var routes = require('./app/routes/index.js');
-var mongoose = require('mongoose');
-
-
+var multer  = require('multer')
+var upload = multer({ dest: 'uploads/' })
 var app = express();
-require('dotenv').load();
 
-mongoose.connect(process.env.MONGO_URI);
+require('dotenv').load();
 
 app.use('/controllers', express.static(process.cwd() + '/app/controllers'));
 app.use('/public', express.static(process.cwd() + '/public'));
 app.use('/common', express.static(process.cwd() + '/app/common'));
 
+var path = process.cwd();
 
 
+app.post('/file', upload.single('0'), function(req, res, next) {
+    console.log(req.body)
+    console.log(req.file)
+    res.json(req.file.size)
+});
 
-routes(app);
+app.get("/", function (req,res){
+			res.sendFile(path + "/public/index.html")
+			
+		});
 
 var port = process.env.PORT || 8080;
 app.listen(port,  function () {

@@ -3,8 +3,8 @@
 <html>
 
 	<head>
-		<title>An Image Search Abstraction Layer</title>
-		
+		<title>A File MetaData Microservice</title>
+		<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
 		<link href="/public/css/main.css" rel="stylesheet" type="text/css">
 	</head>
 
@@ -13,40 +13,24 @@
 	<body>
 		<div class="container">
 			<br />
-			<p class="clementine-text">An Image Search Abstraction Layer</p>
+			<p class="clementine-text">A File MetaData MicroService</p>
 			
 			<div class="container">
 		
 		    <blockquote>
 		      <h1>How It Works</h1>
-		      <p>Use the url of this site and add a search term. It will return a paginated lists of images for your search.</p>
-		      
-		    </blockquote>
-		    <h3>Example creation usage:</h3>
-		    <code>https://url-shortener-api-christoph-phillips.c9users.io/cats</code>
-		    
-		    </blockquote>
-		    <h3>Pagination Usage: Returns second page of image results</h3>
-		    <code>https://url-shortener-api-christoph-phillips.c9users.io/cats?offset=2</code>
-		    
-		    </blockquote>
-		    <h3>Recent Searches</h3>
-		    <ul id="recent"></ul>
-		  	</div>
-		  
-		  	
-			
-			
-			
-			
-			
-			
+		      <p>Upload your file below and a JSON object will be returned with its filesize.</p>
+		     
+		     
+		     <form id="fileForm" method="POST" action="https://file-metadata-microservice-christoph-phillips.c9users.io/file" enctype="multipart/form-data">
+			     <input type="file" name="photo"> 
+			     <input type="submit" value="Send" id="submit">
+		     </form>
 		</div>
 	
 		
 		<script type="text/javascript" src="common/ajax-functions.js"></script>
-		<script type="text/javascript" src="controllers/clickController.client.js"></script>
-		<script type="text/javascript" src="controllers/userController.client.js"></script>
+		<script type="text/javascript" src="/controllers/fileController.js"></script>
 	</body>
 
 </html>
