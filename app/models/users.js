@@ -3,11 +3,9 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var Url = new Schema({
-   url: {
-      original: String,
-      shortened: String
-   }
+var Searches = new Schema({
+   searchTerm: String,
+   date: Date
 });
 
-module.exports = mongoose.model('Url', Url);
+module.exports = mongoose.model('Searches', Searches);

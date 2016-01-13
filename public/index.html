@@ -3,7 +3,7 @@
 <html>
 
 	<head>
-		<title>A URL Shortener MicroService</title>
+		<title>An Image Search Abstraction Layer</title>
 		
 		<link href="/public/css/main.css" rel="stylesheet" type="text/css">
 	</head>
@@ -13,31 +13,28 @@
 	<body>
 		<div class="container">
 			<br />
-			<p class="clementine-text">A URL Shortener MicroService</p>
+			<p class="clementine-text">An Image Search Abstraction Layer</p>
 			
 			<div class="container">
 		
 		    <blockquote>
-		      <h1>User stories:</h1>
-		      <p>I can pass a URL as a parameter and I will receive a shortened URL in the JSON response.</p>
-		      <p>When I visit that shortened URL, it will redirect me to my original link.</p>
+		      <h1>How It Works</h1>
+		      <p>Use the url of this site and add a search term. It will return a paginated lists of images for your search.</p>
+		      
 		    </blockquote>
 		    <h3>Example creation usage:</h3>
-		    <code>https://url-shortener-api-christoph-phillips.c9users.io/https://www.google.com</code>
-		    <br>
-		    <code>https://url-shortener-api-christoph-phillips.c9users.io/http://freecodecamp.com/news</code>
-		    <h3>Example creation output:</h3>
-		    <code>
-		      {
-		        "original": "http://freecodecamp.com/news",
-		        "shortened": "https://url-shortener-api-christoph-phillips.c9users.io/4"
-		      }
-		    </code>
-		    <h3>Usage:</h3>
-		    <code>https://url-shortener-api-christoph-phillips.c9users.io/4</code>
-		    <h3>Will redirect to:</h3>
-		    <code>http://freecodecamp.com/news</code>
-		  </div>
+		    <code>https://url-shortener-api-christoph-phillips.c9users.io/cats</code>
+		    
+		    </blockquote>
+		    <h3>Pagination Usage: Returns second page of image results</h3>
+		    <code>https://url-shortener-api-christoph-phillips.c9users.io/cats?offset=2</code>
+		    
+		    </blockquote>
+		    <h3>Recent Searches</h3>
+		    <ul id="recent"></ul>
+		  	</div>
+		  
+		  	
 			
 			
 			

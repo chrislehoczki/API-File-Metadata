@@ -204,3 +204,13 @@ span {
 	display: inline;
 	margin: 0;
 }
+
+/* FEW ITEMS FOR THIS PROJECT */
+
+#recent {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	list-style-type: none;
+	
+}
